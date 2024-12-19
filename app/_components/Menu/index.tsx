@@ -1,23 +1,31 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./index.module.css";
 
-export default function Footer() {
+export default function Menu() {
+  const open = () => {
+    document.querySelector("nav")?.classList.add(styles.open);
+  };
   return (
-    <footer className={styles.footer}>
+    <div>
       <nav className={styles.nav}>
         <ul className={styles.items}>
-          <li className={styles.item}>
+          <li>
             <Link href="/news">ニュース</Link>
           </li>
-          <li className={styles.item}>
+          <li>
             <Link href="/members">メンバー</Link>
           </li>
-          <li className={styles.item}>
+          <li>
             <Link href="/contact">お問い合わせ</Link>
           </li>
         </ul>
       </nav>
-      <p className={styles.cr}>© SIMPLE. All Rights Reserved 2024</p>
-    </footer>
+      <button className={styles.button} onClick={open}>
+        <Image src="/menu.svg" alt="メニュー" width={24} height={24} />
+      </button>
+    </div>
   );
 }
