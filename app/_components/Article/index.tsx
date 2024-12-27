@@ -16,7 +16,8 @@ export default function Article({ data }: Props) {
       <p className={styles.description}>{data.description}</p>
       <div className={styles.meta}>
         <Link
-          href={`/news/category/${data.category.id}`}
+          // href={`/news/category/${data.category.id}`}
+          href={`/news/category/${data.category.name}`}
           className={styles.categoryLink}
         >
           <Category category={data.category} />
