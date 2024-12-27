@@ -15,11 +15,13 @@ export type Member = {
 } & MicroCMSDate;
 
 export type Category = {
+  id: string;
   name: string;
   // } & MicroCMSListContent;
 } & MicroCMSDate;
 
 export type News = {
+  id: string;
   title: string;
   description: string;
   content: string;
