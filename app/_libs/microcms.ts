@@ -2,7 +2,8 @@ import { createClient } from "microcms-js-sdk";
 import type {
   MicroCMSQueries,
   MicroCMSImage,
-  MicroCMSListContent,
+  //  MicroCMSListContent,
+  MicroCMSDate,
 } from "microcms-js-sdk";
 
 export type Member = {
@@ -10,11 +11,13 @@ export type Member = {
   position: string;
   profile: string;
   image: MicroCMSImage;
-} & MicroCMSListContent;
+  // } & MicroCMSListContent;
+} & MicroCMSDate;
 
 export type Category = {
   name: string;
-} & MicroCMSListContent;
+  // } & MicroCMSListContent;
+} & MicroCMSDate;
 
 export type News = {
   title: string;
@@ -22,7 +25,8 @@ export type News = {
   content: string;
   thumbnail?: MicroCMSImage;
   category: Category;
-} & MicroCMSListContent;
+  // } & MicroCMSListContent;
+} & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
